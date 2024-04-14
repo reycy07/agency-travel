@@ -7,7 +7,12 @@ router.get('/', (req, res)=>{
 });
 
 router.get('/about-us', (req, res)=>{
-    res.render('about-us');// req : lo que el usuario nos envia - res : lo que express responde a la solicitud de usuario  
+
+    const trip = 'Argentina';
+
+    res.render('about-us', {
+        trip
+    });// req : lo que el usuario nos envia - res : lo que express responde a la solicitud de usuario  
 });
 
 export default router;
