@@ -2,6 +2,26 @@ extends ./layout/index
 
 block content
     main.container.mt-5 
-        .row 
-            h1 #{page}
-            p Somos una empresa lider en planes de viajes a paises como #{trip}
+        .row
+            .col-md-5
+                img(src="img/nosotros.jpg", alt="Imagen sobre nosotros", class="img-fluid")
+            .col-md-7
+                h1 #{page}
+                blockquote ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate euismod mauris, et feugiat arcu sagittis tempor. Quisque sit amet tempus orci. Vivamus maximus lectus eget semper accumsan. Integer vel euismod ipsum, et ultricies ante. Duis lobortis tellus a sollicitudin bibendum. Donec commodo dui vel augue bibendum, at consequat urna tempus. Vivamus consequat arcu quis ipsum interdum imperdiet. Cras venenatis dictum orci non ultrices. Sed fermentum consequat urna.
+                p dolor sit amet, consectetur adipiscing elit. Sed condimentum tellus quis neque euismod porta. Quisque risus nisl, imperdiet nec efficitur sit amet, viverra in ligula. In eget faucibus massa, tristique mattis risus. In pulvinar erat lorem, id sollicitudin nisl vestibulum nec. Nulla luctus justo a venenatis tincidunt. Curabitur a pretium odio. Maecenas leo sapien, semper vel vulputate eget, cursus vel lorem. Vivamus nisl dolor, fermentum et metus at, auctor suscipit metus.
+
+    .listado-iconos
+        .container.mt-5.py-5.text-center
+            .row
+                .col-md-4
+                    img(src="img/icono_seguridad.svg", alt="Icono Seguridad", class="img-fluid mb-4")
+                    h2.mb-4 Seguridad 
+                    p Curabitur a pretium odio. Maecenas leo sapien, semper vel vulputate eget, cursus vel lorem. Vivamus nisl dolor, fermentum et metus at, auctor suscipit metus.
+                .col-md-4
+                    img(src="img/icono_destinos.svg", alt="Icono Destinos", class="img-fluid mb-4")
+                    h2.mb-4 Destinos 
+                    p Curabitur a pretium odio. Maecenas leo sapien, semper vel vulputate eget, cursus vel lorem. Vivamus nisl dolor, fermentum et metus at, auctor suscipit metus.
+                .col-md-4
+                    img(src="img/icono_precios.svg", alt="Iconos precios", class="img-fluid mb-4")
+                    h2.mb-4 Precios 
+                    p Curabitur a pretium odio. Maecenas leo sapien, semper vel vulputate eget, cursus vel lorem. Vivamus nisl dolor, fermentum et metus at, auctor suscipit metus.
