@@ -1,3 +1,5 @@
+import { Trip } from "../models/Trip.js";
+
 const homePage = (req, res) =>{
     const page = 'Inicio';
 
@@ -20,11 +22,14 @@ const testimonialsPage = (req, res) =>{
         page
     });
 }
-const tripsPage = (req, res)=>{
+const tripsPage = async (req, res)=>{
+    
+    const trips = await Trip.findAll();
     const page = 'Viajes';
 
     res.render('trips',{
-        page
+        page,
+        trips
     });
 }
 
