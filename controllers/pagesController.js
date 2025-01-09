@@ -1,12 +1,26 @@
 import { Trip } from "../models/Trip.js";
 import { Testimonial } from "../models/Testimonial.js";
 
-const homePage = (req, res) =>{
+const homePage = async (req, res) =>{
     const page = 'Inicio';
+    const classContent = 'home';
 
-    res.render('home',{
-        page 
-    });// req : lo que el usuario nos envia - res : lo que express responde a la solicitud de usuario  
+    const promiseDB = [];
+
+    promiseDB.push(Trip.findAll({limit:3}));
+    promiseDB.push(Testimonial.findAll({limit:3}));
+
+    try {
+        const result = await Promise.all(promiseDB);
+        res.render('home',{
+            page,
+            classContent,
+            trips: result[0],
+            testimonials: result[1]
+        });
+    } catch (error) {
+        console.error(error)
+    }// req : lo que el usuario nos envia - res : lo que express responde a la solicitud de usuario  
 }
 
 const aboutUsPage = (req, res) =>{
