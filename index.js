@@ -25,10 +25,16 @@ app.use( (req, res, next) => {
     return next();
 })
 
+//Add body parser for read data from forms
+app.use(express.urlencoded({extended: true}));
+
+//Add Router
 app.use('/', router);
 
+// define public folder
 app.use(express.static('public'));
 
+// Initialize port
 app.listen(port,()=>{
     console.log(`Example app listening on port ${port}`);
 })
